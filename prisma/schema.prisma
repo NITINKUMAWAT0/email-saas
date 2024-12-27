@@ -11,10 +11,10 @@ datasource db {
 }
 
 model User {
-  id          Int      @id @default(autoincrement())
+  id          String @id @default(cuid()) 
   emailAddress String   @unique
   firstName   String
-  lastName    String?  // Optional or required
+  lastName    String?
   imageUrl    String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
